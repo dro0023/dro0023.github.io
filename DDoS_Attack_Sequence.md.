@@ -1,0 +1,35 @@
+# DDoS Attack Sequence Diagram
+
+## Sequence Diagram
+```mermaidsequenceDiagram
+    participant attacker
+    participant BotNet
+    participant Webserver
+    participant Firewall
+
+    Attacker->>BotNet: Sends command to start DDoS attack
+    BotNet->>Webserver: Floods server with requests
+    Webserver->>Firewall: Forward incoming traffic
+    Firewall->>Webserver: Analyzes traffic 
+    Firewall->>BotNet: Identify malicious IP addresses and block them
+    Firewall->>attacker: Log attack sources for investigation
+    Webserver->>LegitimateUsers: Service disruption experienced
+
+### 1. Attacker Initiates Attack
+The attacker sends a command to start up the botnet, this lets the botnet know where to send requests to. 
+### 2.
+The botnet floods the server with too many requests for the server, 
+### 3. 
+The amount of traffic coming in slows down the server.
+### 4.
+The firewall starts to log unusually high traffic and attempts to sort the legitimate traffic from the botnet traffic. 
+### 5.
+The firewall starts to adjust its rules to deal with the attack and blocks the IPs connected to the botnet
+###6.
+The basic information of the attack is saved and used to mitigate future attacks
+### 7.
+Real user traffic experiences disruptions due to the attack
+### 8.
+As the firewall blocks the malicious IPs and changes its rules real user traffic slowly goes back to normal. 
+## Summary
+This diagram explains the basics of a DDoS attack and the steps taken during to defend against it. Each participant plays a role in the event. The Attacker initiates the attack by sending the botnet the first command, the botnet sends out its malicious packets to flood the server, the server forwards the traffic and the firewall defends against the attack.
