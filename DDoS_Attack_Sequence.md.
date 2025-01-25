@@ -1,7 +1,4 @@
-# DDoS Attack Sequence Diagram
-
-## Sequence Diagram
-```mermaidsequenceDiagram
+```sequenceDiagram
     participant attacker
     participant BotNet
     participant Webserver
@@ -15,6 +12,7 @@
     Firewall->>attacker: Log attack sources for investigation
     Webserver->>LegitimateUsers: Service disruption experienced
 
+# Documentation
 ### 1. Attacker Initiates Attack
 The attacker sends a command to start up the botnet, this lets the botnet know where to send requests to. 
 ### 2.
